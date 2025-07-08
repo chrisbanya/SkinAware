@@ -1,19 +1,23 @@
 export const HeroSection = () => {
   return (
-    <div className="w-5/6 mx-auto relative">
+    <div className="w-11/12 lg:w-10/12 max-w-screen-lg mx-auto relative mt-3.5">
       <img
-        src="/public/heroSkinAware.png"
+        src="/heroSkinAware.png"
         alt="Hero Image"
-        className="w-full h-auto mt-3.5"
+        loading="lazy"
+        className="w-full h-auto"
       />
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4  ">
-        <h1 className="text-4xl font-bold drop-shadow-lg mb-30 mt-46">
+      <div className="absolute top-1/2 inset-x-0 text-center px-4 transform -translate-y-1/2 ">
+        <h1 className="text-center text-sm md:text-4xl font-bold drop-shadow-lg">
           AI-Powered Skin Insights at <br /> Your Fingertips
         </h1>
-        <p className="text-md font-bold  drop-shadow-md  ">
+        {/* <p
+          className="text-center text-base drop-shadow-md"
+          // className="text-xs md:text-lg  drop-shadow-md  "
+        >
           Get instant, reliable, free skin insights on this app, designed with
           all skin tones in mind. Early detection starts here
-        </p>
+        </p> */}
       </div>
     </div>
   );

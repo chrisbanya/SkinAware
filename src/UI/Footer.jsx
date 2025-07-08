@@ -9,15 +9,15 @@ export const Footer = () => {
         <p className="">© {new Date().getFullYear()}. All rights reserved.</p>
       </div>
       <div className="flex space-x-4">
-        <div className="hover:text-black hover:scale-125 transition-colors duration-300">
+        <a href="#" className="hover:text-black hover:scale-125 transition-colors duration-300">
           <FaXTwitter />
-        </div>
-        <div>
+        </a>
+        <a href="#">
           <FaFacebook className="hover:text-blue-600 hover:scale-125 transition-colors duration-300" />
-        </div>
-        <div>
+        </a>
+        <a href="#">
           <FaInstagram className="hover:text-pink-500 hover:scale-125 transition-colors duration-300" />
-        </div>
+        </a>
       </div>
     </footer>
   );

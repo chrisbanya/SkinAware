@@ -1,5 +1,7 @@
 import { useRef, useEffect, useState } from "react";
 import Logo from "./Logo";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { MdOutlineClose } from "react-icons/md";
 
 export const NavBar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -24,18 +26,37 @@ export const NavBar = () => {
 
   return (
     <>
-      <header className="sticky w-full top-0 z-50 bg-white mt-1 ">
-        <nav className="flex justify-between items-center w-5/6 mx-auto ">
-          <div className="flex items-center space-x-4">
+      <header className="sticky w-full top-0 z-50 bg-white">
+        <nav className="flex justify-between items-center mx-auto w-11/12 lg:w-10/12 max-w-screen-lg">
+          <div className="flex items-center -space-x-3 sm:space-x-[unset]">
             <Logo />
-            <a href="#">SkinAware</a>
+            <a className="" href="#">
+              SkinAware
+            </a>
+          </div>
+          {/* Auth buttons mobile */}
+          <div className="md:hidden  ">
+            <div className="flex space-x-2 md:hidden  ">
+              <button className="bg-blue-600 text-white text-center rounded-lg px-2 py-1.5">
+                <a href="#">Sign Up</a>
+              </button>
+              <button className=" text-gray-700 border-gray-200 border-1 text-center rounded-lg px-2 py-1.5">
+                <a href="#" className="text-bold">
+                  Log In
+                </a>
+              </button>
+            </div>
           </div>
           <button
             className="md:hidden"
             ref={buttonRef}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            menu
+            {isMobileMenuOpen ? (
+              <MdOutlineClose className="text-2xl text-[#9A9090]" />
+            ) : (
+              <GiHamburgerMenu className="text-2xl text-[#9A9090]" />
+            )}
           </button>
 
           {/* Desktop Screen Menu */}
@@ -47,7 +68,7 @@ export const NavBar = () => {
               </a>
             </li>
             <li>
-              <a href="#" className=" hover:text-gray-800">
+              <a href="#" className="hover:text-gray-800 ">
                 How it Works
               </a>
             </li>
@@ -68,26 +89,34 @@ export const NavBar = () => {
             </button>
           </div>
         </nav>
+
+        {/* mobile menu dropdown */}
+
         {isMobileMenuOpen && (
           <ul
             ref={menuRef}
-            className="md:hidden flex flex-col items-center w-full  space-y-4  p-4 border border-gray-700 bg-gray-100"
+            className="fixed z-50 md:hidden flex flex-col items-center w-full space-y-4 p-4 bg-white"
           >
-            <li>
+            <li className="border-b hover:scale-110 transition-transform duration-300">
               <a href="#">Home</a>
             </li>
-            <li>
+
+            <li className="border-b hover:scale-110 transition-transform duration-300">
               <a href="#">How it Works</a>
             </li>
-            <li>
+
+            <li className="border-b hover:scale-110 transition-transform duration-300">
               <a href="#">Resources</a>
             </li>
-            <button>
+
+            <button className="border-b hover:scale-110 transition-transform duration-300">
               <a href="#">Login</a>
             </button>
-            <button>
+
+            <button className="border-b hover:scale-110 transition-transform duration-300">
               <a href="#">SignUp</a>
             </button>
+            <div className="w-1/2 border-b-4 border-b-[#FAFCFF]"></div>
           </ul>
         )}
       </header>

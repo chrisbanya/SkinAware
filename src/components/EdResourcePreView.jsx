@@ -6,7 +6,7 @@ const data = [
     title: "Understanding Eczema on Darker Skin",
     description:
       "Eczema can look different on darker skin, often appearing as patches of brown, purple or grey instead of red. Learn about its unique manifestations",
-    image: "/public/eczema.png",
+    image: "/eczema.png",
     iconName: "Read article",
     icon: <GiOpenBook />,
   },
@@ -15,7 +15,7 @@ const data = [
     title: "identifying psoriasis symptoms early",
     description:
       "Psorlasis can be tricky to spot early. This articles covers key indicators. Common areas of occurrence and why early detection is crucial for effectiveness",
-    image: "/public/psoriasis.png",
+    image: "/psoriasis.png",
     iconName: "Read article",
     icon: <GiOpenBook />,
   },
@@ -24,7 +24,7 @@ const data = [
     title: "Acne Management For All Skin Types",
     description:
       "Acne is a common skin condition but its treatment approaches can vary depending on skin type and tone. Discover effective solution and tips ",
-    image: "/public/acneMgt.png",
+    image: "/acneMgt.png",
     iconName: "Read article",
     icon: <GiOpenBook />,
   },
@@ -33,24 +33,25 @@ const data = [
     title: "Sun Protection For Darker Skin Tones",
     description:
       "While often thought to be less susceptible, darker skin tones still require proper sun protection. Learn about the risks of UV exposure",
-    image: "/public/sunscreenProctection.png",
+    image: "/sunscreenProctection.png",
     iconName: "Read article",
     icon: <GiOpenBook />,
   },
 ];
 export const EdResourcePreView = () => {
   return (
-    <div className=" flex flex-wrap justify-between">
+    <div className="flex flex-wrap justify-between">
       {data.map((item) => (
         <div
           key={item.id}
-          className=" w-md mt-4 mb-4 rounded-md shadow-md overflow-hidden hover:scale-110 transition-transform duration-300 hover:shadow-lg"
+          className="w-sm sm:w-xs md:w-[48%] mt-4 mb-4 rounded-md shadow-md overflow-hidden hover:scale-110 transition-transform duration-300 hover:shadow-lg"
         >
-          <div>
+          <div className="">
             <div>
               <img
                 src={item.image}
                 alt={item.title}
+                loading="lazy"
                 className="w-full h-full object-cover rounded-lg "
               />
             </div>
