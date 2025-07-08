@@ -87,3 +87,5 @@ SkinAware promotes proactive skin health by offering accessible, low-barrier too
 CONCLUSION
 
 SkinAware leverages AI to bridge the gap in dermatological care, especially for those who need it most. By combining health tech, inclusive design, and accessibility, it contributes meaningfully to better public health outcomes and technological equity improvement, SkinAware can empower users to take their skin health seriously—regardless of geography or skin tone.
+
+#BUILT & Managed by Christian Adabaanya 
