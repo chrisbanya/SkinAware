@@ -2,6 +2,7 @@ import { useRef, useEffect, useState } from "react";
 import Logo from "./Logo";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineClose } from "react-icons/md";
+import { Link, NavLink } from "react-router-dom";
 
 export const NavBar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -28,23 +29,25 @@ export const NavBar = () => {
     <>
       <header className="sticky w-full top-0 z-50 bg-white">
         <nav className="flex justify-between items-center mx-auto w-11/12 lg:w-10/12 max-w-screen-lg">
-          <div className="flex items-center -space-x-3 sm:space-x-[unset]">
-            <Logo />
-            <a className="" href="#">
-              SkinAware
-            </a>
-          </div>
+          <Link to="/">
+            <div className="flex items-center -space-x-3 sm:space-x-[unset]">
+              <Logo />
+              <span>SkinAware</span>
+            </div>
+          </Link>
           {/* Auth buttons mobile */}
           <div className="md:hidden  ">
             <div className="flex space-x-2 md:hidden  ">
+              <Link to="/signup"> 
               <button className="bg-blue-600 text-white text-center rounded-lg px-2 py-1.5">
-                <a href="#">Sign Up</a>
+              Sign Up
               </button>
-              <button className=" text-gray-700 border-gray-200 border-1 text-center rounded-lg px-2 py-1.5">
-                <a href="#" className="text-bold">
+              </Link>
+              <Link to="/signin">
+                <button className="text-gray-700 border-gray-200 border-1 text-center rounded-lg px-2 py-1.5">
                   Log In
-                </a>
-              </button>
+                </button>
+              </Link>
             </div>
           </div>
           <button
@@ -79,14 +82,16 @@ export const NavBar = () => {
             </li>
           </ul>
           <div className="hidden md:flex space-x-4">
-            <button className="bg-blue-600 text-white px-4 py-1.5 text-center rounded-lg">
-              <a href="#">Sign Up</a>
-            </button>
-            <button className=" text-gray-700 border-gray-200  px-4 py-1.5 border-1 text-center rounded-lg">
-              <a href="#" className="text-bold">
+            <Link to="/signup">
+              <button className="bg-blue-600 text-white px-4 py-1.5 text-center rounded-lg">
+                Sign Up
+              </button>
+            </Link>
+            <Link to="/signin">
+              <button className="text-bold text-gray-700 border-gray-200  px-4 py-1.5 border-1 text-center rounded-lg">
                 Log In
-              </a>
-            </button>
+              </button>
+            </Link>
           </div>
         </nav>
 
