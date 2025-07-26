@@ -5,7 +5,7 @@ const AuthPageLogo = () => {
         src="/waterBlueBig.png"
         alt="Water droplet blue"
         loading="lazy"
-        class="absolute transform -rotate-[4deg]"
+        className="absolute transform -rotate-[4deg]"
         style={{
           width: "58px",
           height: "60px",
@@ -17,7 +17,7 @@ const AuthPageLogo = () => {
         src="/waterRedBig.png"
         alt="water droplet red"
         loading="lazy"
-        class="absolute transform rotate-[10deg]"
+        className="absolute transform rotate-[10deg]"
         style={{
           width: "58px",
           height: "60px",
