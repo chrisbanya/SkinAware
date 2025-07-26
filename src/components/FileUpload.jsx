@@ -1,5 +1,6 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef} from "react";
 import { Upload, FileText, X } from "lucide-react";
+import toast, { Toaster } from "react-hot-toast";
 
 const apiKey = import.meta.env.VITE_AUTODERM_API_KEY;
 const baseURL = import.meta.env.VITE_AUTODERM_URL;
@@ -11,8 +12,6 @@ export default function FileUpload() {
   const [data, setData] = useState([]);
   const [isLoading, setLoading] = useState(false);
   const fileInputRef = useRef(null);
-
-  useEffect(() => {}, []);
 
   const MIN_FILE_SIZE = 5 * 1024; // 300Kb in bytes
 
@@ -80,7 +79,7 @@ export default function FileUpload() {
   const handleSubmit = async (e) => {
     e.stopPropagation();
     if (!file) {
-      alert("Please select a file");
+      toast.error("Please select a file");
       return;
     }
     setLoading(true);
@@ -112,6 +111,16 @@ export default function FileUpload() {
       }
     } catch (error) {
       console.error("Error:", error);
+    toast.custom((t) => (
+      <div
+        className={`bg-[#74094D] text-white px-6 py-1 shadow-md rounded ${
+          t.visible ? "animate-enter" : "animate-leave"
+        }`}
+      >
+        📛 {error.message}
+        <p>Please try again later.</p>
+      </div>
+    ));
     } finally {
       setLoading(false);
     }
@@ -119,6 +128,7 @@ export default function FileUpload() {
 
   return (
     <div className="p-8  border rounded-2xl shadow-md mx-auto  ">
+      <Toaster />
       <div className="mx-auto">
         <div className="flex justify-center items-center gap-4 mb-4">
           <span>
@@ -220,15 +230,15 @@ export default function FileUpload() {
         </button>
       </div>
       {data.map((item) => (
-          <div
-            key={item.classificationId}
-            className="flex flex-col items-center justify-center mt-10 mb-4 "
-          >
-            <div>name: {item.name}</div>
-            <div>read more: {item.readMoreUrl}</div>
-            <div>confidence: {item.confidence}</div>
-          </div>
-        ))}
+        <div
+          key={item.classificationId}
+          className="flex flex-col items-center justify-center mt-10 mb-4 "
+        >
+          <div>name: {item.name}</div>
+          <div>read more: {item.readMoreUrl}</div>
+          <div>confidence: {item.confidence}</div>
+        </div>
+      ))}
     </div>
   );
 }
