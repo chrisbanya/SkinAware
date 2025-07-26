@@ -22,7 +22,10 @@ const data = [
       "Get instant insights on possible conditions and personalized recommendations",
   },
 ];
-const HowItWorksSection = () => {
+const HowItWorksSection = ({overRideClass}) => {
+  const baseClass = "w-11/12 lg:w-10/12 max-w-screen-lg"
+  // const propClass = overRideClass;
+  const className = overRideClass ?? baseClass;
   return (
     <div className="mt-7 md:mt-14 mb-10 w-full">
       <div className="flex justify-center items-center h-18 w-80 mx-auto rounded-lg bg-[#FAFCFF]">
@@ -30,7 +33,7 @@ const HowItWorksSection = () => {
           How SkinAware Works
         </h2>
       </div>
-      <div className="w-11/12 lg:w-10/12 max-w-screen-lg flex flex-wrap justify-center md:justify-between items-center mx-auto mt-10">
+      <div className={`${className} flex flex-wrap justify-center md:justify-between items-center mx-auto mt-10`}>
         {data.map(({ icon: Icon, title, description }, index) => (
           <div
             key={index}
@@ -43,7 +46,6 @@ const HowItWorksSection = () => {
             <p className="text-left px-4">{description}</p>
           </div>
         ))}
-        
       </div>
     </div>
   );
