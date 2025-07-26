@@ -38,10 +38,10 @@ export const NavBar = () => {
           {/* Auth buttons mobile */}
           <div className="md:hidden  ">
             <div className="flex space-x-2 md:hidden  ">
-              <Link to="/signup"> 
-              <button className="bg-blue-600 text-white text-center rounded-lg px-2 py-1.5">
-              Sign Up
-              </button>
+              <Link to="/signup">
+                <button className="bg-blue-600 text-white text-center rounded-lg px-2 py-1.5">
+                  Sign Up
+                </button>
               </Link>
               <Link to="/signin">
                 <button className="text-gray-700 border-gray-200 border-1 text-center rounded-lg px-2 py-1.5">
@@ -66,9 +66,16 @@ export const NavBar = () => {
 
           <ul className="hidden md:flex space-x-6 lg:space-x-12">
             <li>
-              <a href="#" className=" hover:text-gray-800">
+              <NavLink
+                to="/home"
+                className=" hover:text-gray-800"
+                style={({ isActive, isPending }) => ({
+                  color: isActive ? "#74094D" : isPending ? "#FBBF24" : "",
+                  fontWeight: isActive ? "bold" : ""
+                })}
+              >
                 Home
-              </a>
+              </NavLink>
             </li>
             <li>
               <a href="#" className="hover:text-gray-800 ">
