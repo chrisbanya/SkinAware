@@ -88,7 +88,7 @@ const SignIn = () => {
 
   return (
     <div className="w-full border-2">
-      <Toaster position="top-right" />"
+      <Toaster position="top-right" toastOptions={{duration: 500}} />
       <div className="w-11/12 lg:w-10/12 max-w-screen-lg mx-auto flex">
         <div className="md:w-1/2 mx-auto md:mx-0  flex justify-center relative">
           <div className="w-11/12 md:h-[96%] border border-gray-300 rounded-2xl md:absolute md:bottom-0 flex flex-col justify-center items-center mt-10 md:mt-0 ">
