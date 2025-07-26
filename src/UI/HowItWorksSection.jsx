@@ -43,7 +43,7 @@ const HowItWorksSection = ({overRideClass}) => {
               <Icon className="text-4xl text-indigo-600" />
               <p>{title}</p>
             </div>
-            <p className="text-left px-4">{description}</p>
+            <p className="text-center px-4">{description}</p>
           </div>
         ))}
       </div>
